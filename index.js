@@ -3,7 +3,7 @@ function isArrayNotEmpty(array) {
     return Array.isArray(array) && array.length > 0;
 };
 
-function Convert16bitesArray(array, output_type) {
+function convert16bitesArrayTo(array, output_type) {
     if (!isArrayNotEmpty(array))
         return;
 
@@ -26,6 +26,7 @@ function Convert16bitesArray(array, output_type) {
                     ret |= 0xFFFF0000;
             }
             break;
+        case "int":
         case "int32":
             if (array.length === 2) {
                 ret = (((array[1] & 0xFFFF) << 16) | (array[0] & 0xFFFF));
@@ -33,11 +34,13 @@ function Convert16bitesArray(array, output_type) {
                     ret |= 0xFFFFFFFF00000000;
             }
             break;
-        case "uint32":
-            if (array.length === 2) {
-                ret = (((array[1] & 0xFFFF) << 16) | (array[0] & 0xFFFF));
-            }
-            break;
+            //TODO
+        // case "uint32":
+        //     if (array.length === 2) {
+        //         ret = (((array[1] & 0xFFFF) << 16) | (array[0] & 0xFFFF));
+        //         ret = Number.toUint32(ret);
+        //     }
+        //     break;
         case "string":
         case "string8bit":
             if (array.length > 0) {
@@ -72,9 +75,8 @@ function Convert16bitesArray(array, output_type) {
     return ret;
 };
 
-
 module.exports = {
     isArrayNotEmpty,
-    Convert16bitesArray
+    convert16bitesArrayTo
 }
 
