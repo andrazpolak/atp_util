@@ -1,0 +1,22 @@
+{
+  "name": "atp_util",
+  "version": "1.0.0",
+  "description": "ATP utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "./test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrazpolak/atp_util.git"
+  },
+  "keywords": [
+    "utilities"
+  ],
+  "author": "Andraz Polak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrazpolak/atp_util/issues"
+  },
+  "homepage": "https://github.com/andrazpolak/atp_util#readme"
+}
